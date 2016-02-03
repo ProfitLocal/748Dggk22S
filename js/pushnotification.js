@@ -139,6 +139,7 @@ var push = {
 };
 function onOnline() { 
 
+
 } 
 function onOffline() { 
 alert("no internet connection found"); 
