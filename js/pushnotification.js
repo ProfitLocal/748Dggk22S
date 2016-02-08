@@ -80,24 +80,24 @@ var push = {
         receivedElement.setAttribute('style', 'display:block;');
 
         //alert('Received Event: ' + id);
-       // console.log('Received Event: ' + id);
+        console.log('Received Event: ' + id);
     },
     // iOS
     onNotificationAPN: function (event) {
         var pushNotification = window.plugins.pushNotification;
-      //  console.log("Received a notification! " + event.alert);
-      //  alert("Received a notification! " + event.alert);
-      //  console.log("event sound " + event.sound);
+        console.log("Received a notification! " + event.alert);
+        alert("Received a notification! " + event.alert);
+        console.log("event sound " + event.sound);
         //alert("event sound " + event.sound)
-       // console.log("event badge " + event.badge);
+        console.log("event badge " + event.badge);
         //alert("event badge " + event.badge);
-      //  console.log("event " + event);
+        console.log("event " + event);
         // alert("event " + event);
         if (event.alert) {
             navigator.notification.alert(event.alert);
         }
         if (event.badge) {
-         //   console.log("Set badge on  " + pushNotification);
+            console.log("Set badge on  " + pushNotification);
             pushNotification.setApplicationIconBadgeNumber(this.successHandler, event.badge);
         }
         if (event.sound) {
@@ -112,7 +112,7 @@ var push = {
                 if (e.regid.length > 0) {
                     // Your GCM push server needs to know the regID before it can push to this device
                     // here is where you might want to send it the regID for later use.
-                  //  alert('registration id = ' + e.regid);
+                    alert('registration id = ' + e.regid);
                     $('#android_devid').val(e.regid);
                     var siteId = $('#userSiteId').val();
                     registerAndroidDeviceId(siteId);
@@ -139,10 +139,22 @@ var push = {
 };
 function onOnline() { 
 
-
 } 
 function onOffline() { 
 alert("no internet connection found"); 
 navigator.app.exitApp();  
 } 
+function checkConnection() {
+        var networkState = navigator.connection.type;
 
+        var states = {};
+        states[Connection.UNKNOWN]  = 'Unknown connection';
+        states[Connection.ETHERNET] = 'Ethernet connection';
+        states[Connection.WIFI]     = 'WiFi connection';
+        states[Connection.CELL_2G]  = 'Cell 2G connection';
+        states[Connection.CELL_3G]  = 'Cell 3G connection';
+        states[Connection.CELL_4G]  = 'Cell 4G connection';
+        states[Connection.NONE]     = 'No network connection';
+
+        alert('Connection type: ' + states[networkState]);
+    }

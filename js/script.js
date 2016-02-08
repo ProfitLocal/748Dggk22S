@@ -1861,7 +1861,7 @@ function homeTabInfo() {
                 var address = item.address1 + ' , ' + item.address2 + ' , ' + item.city + ',' + item.state;
                 popdata += '<div data-role="collapsible" data-collapsed="false" data-theme="b" data-content-theme="b"><h3>' + item.address1 + ' , ' + item.address2 + ' , ' + item.city + '</h3>';
                 popdata += '<p>';
-                //popdata += '<a href="mailto:' + item.email + '?&body=' + address + '" data-role="button" data-theme="b">Share by email</a>';
+                popdata += '<a href="mailto:' + item.email + '?&body=' + address + '" data-role="button" data-theme="b">Share by email</a>';
                 popdata += '<a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u='+item.website+'" data-role="button" data-theme="b">Share by facebook</a>';
                 popdata += '</p></div>';
             });
@@ -3992,7 +3992,7 @@ function indexTabInfo() {
                 var address = item.address1 + ' , ' + item.address2 + ' , ' + item.city + ',' + item.state;
                 popdata += '<div data-role="collapsible" data-collapsed="false" data-theme="b" data-content-theme="b"><h3>' + item.address1 + ' , ' + item.address2 + ' , ' + item.city + '</h3>';
                 popdata += '<p>';
-               // popdata += '<a href="mailto:' + item.email + '?&body=' + address + '" data-role="button" data-theme="b">Share by email</a>';
+                popdata += '<a href="mailto:' + item.email + '?&body=' + address + '" data-role="button" data-theme="b">Share by email</a>';
                 popdata += '<a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u='+item.website+'" data-role="button" data-theme="b">Share by facebook</a>';
                 popdata += '<a target="_blank" href="http://twitter.com/home?status='+item.website+'  Check out the iPhone app" data-role="button" data-theme="b">Share by Twitter</a>';
                 popdata += '</p></div>';
