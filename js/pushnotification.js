@@ -37,8 +37,8 @@ var push = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function () {
         $('.header-content .back').hide();
-        document.addEventListener("online", onOnline, false); 
-        document.addEventListener("offline", onOffline, false);
+       // document.addEventListener("online", onOnline, false); 
+      //  document.addEventListener("offline", onOffline, false);
         $("body").niceScroll();
         push.receivedEvent('deviceready');
         
@@ -136,7 +136,7 @@ var push = {
         }
     }
 
-};
+};/*
 function onOnline() { 
 
 } 
@@ -157,4 +157,4 @@ function checkConnection() {
         states[Connection.NONE]     = 'No network connection';
 
         alert('Connection type: ' + states[networkState]);
-    }
+    } */
