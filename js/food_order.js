@@ -887,45 +887,30 @@ function updateQuantityNew(btn, increase) {
     if (increase) {
 
         val = parseInt(val) + 1;
-        if(max == "null"){
+
+        if (val <= max) {
             $(btn).closest('td').find('.quantity').html(val);
             updateQuantityFinal(uniqueId, val);
-        }else{
-            if (val <= max) {
-                $(btn).closest('td').find('.quantity').html(val);
-                updateQuantityFinal(uniqueId, val);
-            } else {
-                $('.error').html('Maximum quantity for this item is ' + max);
-                scrollToClass('error');
+        } else {
+            $('.error').html('Maximum quantity for this item is ' + max);
+            scrollToClass('error');
 
-            }
         }
-        
 
     } else {
         val = parseInt(val) - 1;
-        if(min == "null"){
-            if(val == 0){
-                $('.error').html('Minuimum quantity for this item is 1');
-                scrollToClass('error');
-            }else{
-                $(btn).closest('td').find('.quantity').html(val);
-                updateQuantityFinal(uniqueId, val);
-            }
-        }else{
-          if (val >= min) {
-                $(btn).closest('td').find('.quantity').html(val);
-                updateQuantityFinal(uniqueId, val);
-            } else {
-                $('.error').html('Minuimum quantity for this item is ' + min);
-                scrollToClass('error');
+        if (val >= min) {
+            $(btn).closest('td').find('.quantity').html(val);
+            updateQuantityFinal(uniqueId, val);
+        } else {
+            $('.error').html('Minuimum quantity for this item is ' + min);
+            scrollToClass('error');
 
-            }  
         }
-        
 
     }
 }
+
 function scrollToClass(classname) {
     $('.success').hide(); $('.error').hide();
     $('.' + classname).show();

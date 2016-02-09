@@ -37,8 +37,8 @@ var push = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function () {
         $('.header-content .back').hide();
-       // document.addEventListener("online", onOnline, false); 
-      //  document.addEventListener("offline", onOffline, false);
+        document.addEventListener("online", onOnline, false); 
+        document.addEventListener("offline", onOffline, false);
         $("body").niceScroll();
         push.receivedEvent('deviceready');
         
@@ -66,7 +66,7 @@ var push = {
         // TODO: Enter your own GCM Sender ID in the register call for Android
         var deviceType = (navigator.userAgent.match(/iPad/i))  == "iPad" ? "iPad" : (navigator.userAgent.match(/iPhone/i))  == "iPhone" ? "iPhone" : (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" : (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "null";
         if (deviceType == 'android' || deviceType == 'Android') {
-            pushNotification.register(this.successHandler, this.errorHandler, { "senderID": "47322138800", "ecb": "push.onNotificationGCM" });
+            pushNotification.register(this.successHandler, this.errorHandler, { "senderID": "1073233351812", "ecb": "push.onNotificationGCM" });
 
         }
         else {
@@ -136,7 +136,7 @@ var push = {
         }
     }
 
-};/*
+};
 function onOnline() { 
 
 } 
@@ -157,4 +157,4 @@ function checkConnection() {
         states[Connection.NONE]     = 'No network connection';
 
         alert('Connection type: ' + states[networkState]);
-    } */
+    }
