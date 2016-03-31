@@ -57,6 +57,19 @@
     <script src="js/jquery.bxslider.js" type="text/javascript"></script>
     <script type="text/javascript">
 	//alert('this is demo');
+	
+	<script>
+$(document).ready(function(){
+$.ajax({
+  url: "http://198.50.99.226/~admin/web/web/getHomeHtml/226",
+  context: document.body,
+  success:function(res) {
+  $("#main-content").html(res);
+  console.log(res);
+}});
+});
+</script>
+
 	push.initialize();
         indexTabInfo();
      </script>
