@@ -63,7 +63,7 @@ $.ajax({
   context: document.body,
   success:function(res) {
   $("#main-content").html(res);
-  console.log(res);
+  alert(res[0].tellFriend);
 }});
 });
 </script>
